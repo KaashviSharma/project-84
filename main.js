@@ -1,6 +1,6 @@
 // Create a reference for the canvas
-canvas = document.getElementById("myCanvas")
-ctx = canvas.getContext("2d")
+canvas = document.getElementById("myCanvas");
+ctx = canvas.getContext("2d");
 
 img_width = 300;
 img_height = 100;
@@ -29,27 +29,55 @@ function my_keydown(e)
 	console.log(keyPressed);
 	
 		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
+		{
+			aplhabetkey();
+			document.getElementById("d1").innerHTML = "you pressed alphabet key";
+		}
+		else if(keyPressed >=48 && keyPressed <=57)
+		{
+			numberkey();
+			document.getElementById("d1").innerHTML = "you pressed number key";
+		}
+		else if(keyPressed >=37 && keyPressed <=40)
+		{
+			arrowkey();
+			document.getElementById("d1").innerHTML = "you pressed arrow key";
+		}
+		else if((keyPressed ==17 || keyPressed==18)|| (keyPressed ==27))
+		{
+			specialkey();
+			document.getElementById("d1").innerHTML = "you pressed special key";
+		}
+		else{
+			otherkey();
+			document.getElementById("d1").innerHTML = "you pressed symbol or other key"
+		}
+	}
 		//write a code to check the type of key pressed
 
 function aplhabetkey()
 {
 	//upload respective image with the message. 
-
+img_image="Alpkey.png";
+add();
 }
 function numberkey()
 {
-	
+	img_image="numkey.png";
+	add();
 }
 function arrowkey()
 {
+	img_image="Arrkey.png";
+	add();
 }
 function specialkey()
 {
-	
+	img_image="spkey.png";
+	add();
 }
 function otherkey()
 {
 	img_image="otherkey.png";
 	add();
-}
 }
